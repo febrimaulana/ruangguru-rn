@@ -15,11 +15,11 @@ const FormSubmit = ({navigation, route}) => {
     ...route.params,
     userId: profile.userId,
     email: profile.userEmail,
-    name: '',
-    phone: '',
-    phoneOther: '',
-    address: '',
-    noted: '',
+    name: null,
+    phone: null,
+    phoneOther: null,
+    address: null,
+    noted: null,
   });
 
   const onKirim = async () => {
@@ -50,7 +50,7 @@ const FormSubmit = ({navigation, route}) => {
         />
         <Gap height={hp(2)} />
         <Input
-          placeholder="Telpom Penerima"
+          placeholder="Telpon Penerima"
           onChangeText={value => setInput({...input, phone: value})}
           keyboardType="number-pad"
         />

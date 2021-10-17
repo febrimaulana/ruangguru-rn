@@ -12,3 +12,16 @@ export const klaimPrize = data => async dispatch => {
     throw error;
   }
 };
+
+export const findAllPrize = userId => async dispatch => {
+  try {
+    dispatch({type: reducer.LOADING, value: true});
+    const result = await APIBASIC.get(`ruangguru/v1/prize?userId=${userId}`);
+    dispatch({type: reducer.LOADING, value: false});
+    return result.data.data;
+  } catch (e) {
+    dispatch({type: reducer.LOADING, value: false});
+    const error = e.response.data;
+    throw error;
+  }
+};
