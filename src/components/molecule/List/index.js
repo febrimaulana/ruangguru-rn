@@ -4,20 +4,21 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {Gap, Heading} from '../..';
 import {colors, fonts, hp, wp} from '../../../constants';
 
-const List = ({onPress}) => {
+const List = ({onPress, title, orderStatus, packageSerial, packageTag}) => {
   return (
     <TouchableOpacity style={styles.conatiner} onPress={onPress}>
       <View>
         <Heading
-          title="Mahir Berbahasa Inggris"
+          title={title}
           fontFamily={fonts.LatoBlack}
           fontSize={hp(2.3)}
+          numberOfLines={1}
         />
         <Gap height={hp(0.6)} />
-        <Heading title="SUCCESS" fontFamily={fonts.LatoBold} />
+        <Heading title={orderStatus} fontFamily={fonts.LatoBold} />
         <Gap height={hp(0.6)} />
-        <Heading title="PKG-EQCB30RW" />
-        <Heading title="#englishacademy" />
+        <Heading title={packageSerial} />
+        <Heading title={packageTag} />
       </View>
       <Icon name="chevron-forward-outline" size={hp(3)} />
     </TouchableOpacity>

@@ -3,13 +3,19 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import {Banner1, Banner2, Banner3} from '../../assets';
 import {Banner, Gap, Heading, List} from '../../components';
 import {colors, fonts, hp, wp} from '../../constants';
+import {useSelector} from 'react-redux';
 
 const Home = ({navigation}) => {
+  const {profile, packages} = useSelector(state => state.profile);
+
   return (
     <View style={styles.page}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Gap height={hp(3)} />
-        <Heading title="Hi, Anugrah Aman" fontFamily={fonts.LatoBold} />
+        <Heading
+          title={`Hai, ${profile.userName}`}
+          fontFamily={fonts.LatoBold}
+        />
         <Gap height={hp(2)} />
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <Banner source={Banner2} />
@@ -23,8 +29,18 @@ const Home = ({navigation}) => {
           fontFamily={fonts.LatoBold}
         />
         <Gap height={hp(2)} />
-        <List onPress={() => navigation.push('DetailOrder')} />
-        <List onPress={() => navigation.push('DetailOrder')} />
+        {packages.map(item => {
+          return (
+            <List
+              title={item.packageName}
+              orderStatus={item.orderStatus}
+              packageSerial={item.packageSerial}
+              packageTag={item.packageTag}
+              onPress={() => navigation.push('DetailOrder', item)}
+              key={item.packageSerial}
+            />
+          );
+        })}
       </ScrollView>
     </View>
   );
