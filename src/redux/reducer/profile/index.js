@@ -2,7 +2,8 @@ import {reducer} from '../../../constants';
 
 const initialStateRoot = {
   profile: {},
-  token: null,
+  isLogin: false,
+  packages: [],
 };
 
 const profile = (state = initialStateRoot, action) => {
@@ -12,10 +13,15 @@ const profile = (state = initialStateRoot, action) => {
         ...state,
         profile: action.value,
       };
-    case reducer.TOKEN:
+    case reducer.ISLOGIN:
       return {
         ...state,
-        token: action.value,
+        isLogin: action.value,
+      };
+    case reducer.PACKAGES:
+      return {
+        ...state,
+        packages: action.value,
       };
     default:
       return state;

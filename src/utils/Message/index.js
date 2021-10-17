@@ -44,7 +44,7 @@ export const showSuccessToas = (title, text) => {
   Toast.show({
     title: title,
     text: text,
-    color: colors.green,
+    color: colors.green6,
   });
 };
 
@@ -52,7 +52,7 @@ export const showErrorToas = (title, text) => {
   Toast.show({
     title: title,
     text: text,
-    color: colors.red,
+    color: colors.red7,
   });
 };
 
@@ -60,6 +60,6 @@ export const showInfoToas = (title, text) => {
   Toast.show({
     title: title,
     text: text,
-    color: colors.blue1,
+    color: colors.blue7,
   });
 };

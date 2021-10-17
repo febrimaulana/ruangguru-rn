@@ -5,15 +5,15 @@ import Profile from './Profile';
 import TentangKami from './Profile/TentangKami';
 import UbahProfile from './Profile/UbahProfile';
 import Splash from './Splash';
-import Submit from './Submit';
+import Verifikasi from './Verifikasi';
 
 export {
   Splash,
   Home,
   Profile,
-  Submit,
   UbahProfile,
   TentangKami,
   DetailOrder,
   FormSubmit,
+  Verifikasi,
 };

@@ -8,7 +8,7 @@ import {
   Home,
   Profile,
   Splash,
-  Submit,
+  Verifikasi,
   TentangKami,
   UbahProfile,
 } from '../pages';
@@ -36,7 +36,7 @@ const Routing = () => {
         animation: 'slide_from_right',
       }}>
       <Stack.Screen name="Splash" component={Splash} />
-      <Stack.Screen name="Submit" component={Submit} />
+      <Stack.Screen name="Verifikasi" component={Verifikasi} />
       <Stack.Screen name="MainApp" component={MainApp} />
       <Stack.Screen name="DetailOrder" component={DetailOrder} />
       <Stack.Screen name="UbahProfile" component={UbahProfile} />
