@@ -1,40 +1,26 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {colors, hp} from '../../../constants';
+import {Heading} from '..';
+import {colors, fonts, hp} from '../../../constants';
 
 const TabBottomItem = ({title, active, onPress, onLongPress}) => {
   const Icons = () => {
     if (title === 'Home') {
       return active ? (
-        <Icon name="home" color={colors.red} size={hp(5)} />
+        <Icon name="home" color={colors.white} size={hp(5)} />
       ) : (
-        <Icon name="home" color={colors.dustyGray} size={hp(5)} />
+        <Icon name="home" color={colors.gray7} size={hp(5)} />
       );
     }
-    if (title === 'Store') {
+    if (title === 'Profile') {
       return active ? (
-        <Icon name="store" color={colors.red} size={hp(5)} />
+        <Icon name="person" color={colors.white} size={hp(5)} />
       ) : (
-        <Icon name="store" color={colors.dustyGray} size={hp(5)} />
+        <Icon name="person" color={colors.gray7} size={hp(5)} />
       );
     }
-    if (title === 'Account') {
-      return active ? (
-        <Icon name="person" color={colors.red} size={hp(5)} />
-      ) : (
-        <Icon name="person" color={colors.dustyGray} size={hp(5)} />
-      );
-    }
-
-    if (title === 'Help') {
-      return active ? (
-        <Icon name="help" color={colors.red} size={hp(4)} />
-      ) : (
-        <Icon name="help" color={colors.dustyGray} size={hp(4)} />
-      );
-    }
-    return <Icon name="home" color={colors.gray} size={hp(4)} />;
+    return <Icon name="home" color={colors.gray7} size={hp(4)} />;
   };
 
   return (
@@ -43,6 +29,12 @@ const TabBottomItem = ({title, active, onPress, onLongPress}) => {
       onLongPress={onLongPress}
       style={styles.container}>
       <Icons />
+      <Heading
+        title={title}
+        color={active ? colors.white : colors.gray7}
+        fontFamily={fonts.LatoBold}
+        fontSize={hp(2.5)}
+      />
     </TouchableOpacity>
   );
 };
