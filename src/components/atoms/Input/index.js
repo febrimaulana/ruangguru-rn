@@ -12,6 +12,7 @@ const Input = ({
   height,
   autoCapitalize,
   keyboardType,
+  value,
 }) => {
   return (
     <TextInput
@@ -26,6 +27,7 @@ const Input = ({
       textAlignVertical={textAlignVertical}
       autoCapitalize={autoCapitalize || 'none'}
       keyboardType={keyboardType}
+      value={value}
     />
   );
 };

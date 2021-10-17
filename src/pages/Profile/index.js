@@ -3,8 +3,11 @@ import {StyleSheet, View, ScrollView} from 'react-native';
 import {ILDummyProfile} from '../../assets/ilustrasi';
 import {Button, Gap, Heading, Image, ListProfile} from '../../components';
 import {colors, fonts, hp, wp} from '../../constants';
+import {useSelector} from 'react-redux';
 
 const Profile = ({navigation}) => {
+  const {profile} = useSelector(state => state.profile);
+
   return (
     <View style={styles.page}>
       <Gap height={hp(2)} />
@@ -16,7 +19,7 @@ const Profile = ({navigation}) => {
         borderRadius={wp(30) / 2}
       />
       <Gap height={hp(1)} />
-      <Heading title="Anugrah Aman" center fontFamily={fonts.LatoBlack} />
+      <Heading title={profile.userName} center fontFamily={fonts.LatoBlack} />
       <Gap height={hp(2)} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <ListProfile
