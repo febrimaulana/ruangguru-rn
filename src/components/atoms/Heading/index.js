@@ -11,6 +11,8 @@ const Heading = ({
   center,
   textDecorationLine,
   textTransform,
+  textAlign,
+  maxWidth,
 }) => {
   return (
     <Text
@@ -22,6 +24,8 @@ const Heading = ({
         center,
         textDecorationLine,
         textTransform,
+        textAlign,
+        maxWidth,
       )}
       numberOfLines={numberOfLines}>
       {title}
@@ -39,12 +43,15 @@ const styles = StyleSheet.create({
     center,
     textDecorationLine,
     textTransform,
+    textAlign,
+    maxWidth,
   ) => ({
     fontSize: fontSize || hp(2),
     color: color || colors.black,
     fontFamily: fontFamily || fonts.LatoRegular,
-    textAlign: center ? 'center' : 'left',
+    textAlign: center ? 'center' : textAlign ? textAlign : 'left',
     textDecorationLine: textDecorationLine ? textDecorationLine : 'none',
     textTransform: textTransform,
+    maxWidth: maxWidth,
   }),
 });
