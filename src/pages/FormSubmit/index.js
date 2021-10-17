@@ -52,11 +52,13 @@ const FormSubmit = ({navigation, route}) => {
         <Input
           placeholder="Telpom Penerima"
           onChangeText={value => setInput({...input, phone: value})}
+          keyboardType="number-pad"
         />
         <Gap height={hp(2)} />
         <Input
           placeholder="Telpon Lainnya Yang Dapat Dihubungi"
           onChangeText={value => setInput({...input, phoneOther: value})}
+          keyboardType="number-pad"
         />
         <Gap height={hp(2)} />
         <Input
