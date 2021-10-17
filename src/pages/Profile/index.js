@@ -2,11 +2,23 @@ import React from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import {ILDummyProfile} from '../../assets/ilustrasi';
 import {Button, Gap, Heading, Image, ListProfile} from '../../components';
-import {colors, fonts, hp, wp} from '../../constants';
-import {useSelector} from 'react-redux';
+import {colors, fonts, hp, reducer, wp} from '../../constants';
+import {RNAlert} from '../../utils';
+import {useDispatch, useSelector} from 'react-redux';
 
 const Profile = ({navigation}) => {
+  const dispatch = useDispatch();
   const {profile} = useSelector(state => state.profile);
+
+  const onLogout = () => {
+    dispatch({type: reducer.PROFILE, value: {}});
+    dispatch({type: reducer.PACKAGES, value: []});
+    dispatch({type: reducer.ISLOGIN, value: false});
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Verifikasi'}],
+    });
+  };
 
   return (
     <View style={styles.page}>
@@ -30,7 +42,19 @@ const Profile = ({navigation}) => {
           title="Tentang Kami"
           onPress={() => navigation.push('TentangKami')}
         />
-        <Button title="Keluar" />
+        <Button
+          title="Keluar"
+          onPress={() => {
+            RNAlert({
+              title: 'Apa anda yakin ?',
+              message: 'Kamu akan keluar dari aplikasi',
+              button: [
+                {text: 'Batal'},
+                {text: 'OK', onPress: () => onLogout()},
+              ],
+            });
+          }}
+        />
       </ScrollView>
     </View>
   );
