@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import {Button, Gap, Header, Heading} from '../../components';
 import {colors, fonts, hp, wp} from '../../constants';
+import {showInfoPopop} from '../../utils';
 
 const DetailOrder = ({navigation, route}) => {
   const {packageName, packageSerial, orderStatus, packageTag} = route.params;
@@ -54,7 +55,14 @@ const DetailOrder = ({navigation, route}) => {
         <Gap height={hp(3)} />
         <Button
           title="Ambil Hadiah"
-          onPress={() => navigation.push('FormSubmit', route.params)}
+          onPress={() => {
+            if (orderStatus !== 'SUCCEED')
+              return showInfoPopop(
+                'Oops',
+                'Pembayaran anda belum berhasil, silahkan melakukan pembayaran',
+              );
+            navigation.push('FormSubmit', route.params);
+          }}
         />
       </ScrollView>
     </View>
