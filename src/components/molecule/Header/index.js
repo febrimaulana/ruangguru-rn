@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: wp(3),
+    paddingVertical: wp(3),
   },
 });

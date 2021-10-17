@@ -4,7 +4,7 @@ import {Banner1, Banner2, Banner3} from '../../assets';
 import {Banner, Gap, Heading, List} from '../../components';
 import {colors, fonts, hp, wp} from '../../constants';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <View style={styles.page}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -23,7 +23,7 @@ const Home = () => {
           fontFamily={fonts.LatoBold}
         />
         <Gap height={hp(2)} />
-        <List />
+        <List onPress={() => navigation.push('DetailOrder')} />
         <List />
       </ScrollView>
     </View>

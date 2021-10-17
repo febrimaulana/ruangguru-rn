@@ -4,9 +4,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {Gap, Heading} from '../..';
 import {colors, fonts, hp, wp} from '../../../constants';
 
-const List = () => {
+const List = ({onPress}) => {
   return (
-    <TouchableOpacity style={styles.conatiner}>
+    <TouchableOpacity style={styles.conatiner} onPress={onPress}>
       <View>
         <Heading
           title="Mahir Berbahasa Inggris"
