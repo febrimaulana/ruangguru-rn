@@ -3,9 +3,9 @@ import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {colors, hp, wp} from '../../../constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ListProfile = ({title}) => {
+const ListProfile = ({title, onPress}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Text>{title}</Text>
       <Icon name="chevron-forward-outline" size={hp(2)} />
     </TouchableOpacity>

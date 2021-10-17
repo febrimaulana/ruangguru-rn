@@ -4,7 +4,7 @@ import {colors, fonts, hp, wp} from '../../constants';
 import {Gap, Heading, Image, ListProfile} from '../../components';
 import {ILDummyProfile} from '../../assets/ilustrasi';
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
     <View style={styles.page}>
       <Gap height={hp(2)} />
@@ -18,9 +18,18 @@ const Profile = () => {
       <Gap height={hp(1)} />
       <Heading title="Anugrah Aman" center fontFamily={fonts.LatoBlack} />
       <Gap height={hp(2)} />
-      <ListProfile title="Ubah Profile" />
-      <ListProfile title="Ubah Alamat" />
-      <ListProfile title="Tentang Kami" />
+      <ListProfile
+        title="Ubah Profile"
+        onPress={() => navigation.push('UbahProfile')}
+      />
+      <ListProfile
+        title="Ubah Alamat"
+        onPress={() => navigation.push('UbahAlamat')}
+      />
+      <ListProfile
+        title="Tentang Kami"
+        onPress={() => navigation.push('TentangKami')}
+      />
     </View>
   );
 };

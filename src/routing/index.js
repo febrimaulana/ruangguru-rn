@@ -1,6 +1,14 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Splash, Home, Profile, Submit} from '../pages';
+import {
+  Splash,
+  Home,
+  Profile,
+  Submit,
+  UbahProfile,
+  UbahAlamat,
+  TentangKami,
+} from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigation} from '../components';
 
@@ -29,6 +37,9 @@ const Routing = () => {
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Submit" component={Submit} />
       <Stack.Screen name="MainApp" component={MainApp} />
+      <Stack.Screen name="UbahProfile" component={UbahProfile} />
+      <Stack.Screen name="UbahAlamat" component={UbahAlamat} />
+      <Stack.Screen name="TentangKami" component={TentangKami} />
     </Stack.Navigator>
   );
 };
