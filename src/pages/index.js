@@ -1,11 +1,11 @@
-import Splash from './Splash';
+import DetailOrder from './DetailOrder';
+import FormSubmit from './FormSubmit';
 import Home from './Home';
 import Profile from './Profile';
-import Submit from './Submit';
-import DetailOrder from './DetailOrder';
-import UbahProfile from './Profile/UbahProfile';
-import UbahAlamat from './Profile/UbahAlamat';
 import TentangKami from './Profile/TentangKami';
+import UbahProfile from './Profile/UbahProfile';
+import Splash from './Splash';
+import Submit from './Submit';
 
 export {
   Splash,
@@ -13,7 +13,7 @@ export {
   Profile,
   Submit,
   UbahProfile,
-  UbahAlamat,
   TentangKami,
   DetailOrder,
+  FormSubmit,
 };

@@ -24,7 +24,7 @@ const Home = ({navigation}) => {
         />
         <Gap height={hp(2)} />
         <List onPress={() => navigation.push('DetailOrder')} />
-        <List />
+        <List onPress={() => navigation.push('DetailOrder')} />
       </ScrollView>
     </View>
   );

@@ -1,17 +1,17 @@
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
+import {BottomNavigation} from '../components';
 import {
-  Splash,
+  DetailOrder,
+  FormSubmit,
   Home,
   Profile,
+  Splash,
   Submit,
-  UbahProfile,
-  UbahAlamat,
   TentangKami,
-  DetailOrder,
+  UbahProfile,
 } from '../pages';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {BottomNavigation} from '../components';
 
 const Stack = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
@@ -40,8 +40,8 @@ const Routing = () => {
       <Stack.Screen name="MainApp" component={MainApp} />
       <Stack.Screen name="DetailOrder" component={DetailOrder} />
       <Stack.Screen name="UbahProfile" component={UbahProfile} />
-      <Stack.Screen name="UbahAlamat" component={UbahAlamat} />
       <Stack.Screen name="TentangKami" component={TentangKami} />
+      <Stack.Screen name="FormSubmit" component={FormSubmit} />
     </Stack.Navigator>
   );
 };

@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {colors, fonts, hp, wp} from '../../constants';
-import {Gap, Heading, Image, ListProfile} from '../../components';
+import {StyleSheet, View, ScrollView} from 'react-native';
 import {ILDummyProfile} from '../../assets/ilustrasi';
+import {Button, Gap, Heading, Image, ListProfile} from '../../components';
+import {colors, fonts, hp, wp} from '../../constants';
 
 const Profile = ({navigation}) => {
   return (
@@ -18,18 +18,17 @@ const Profile = ({navigation}) => {
       <Gap height={hp(1)} />
       <Heading title="Anugrah Aman" center fontFamily={fonts.LatoBlack} />
       <Gap height={hp(2)} />
-      <ListProfile
-        title="Ubah Profile"
-        onPress={() => navigation.push('UbahProfile')}
-      />
-      <ListProfile
-        title="Ubah Alamat"
-        onPress={() => navigation.push('UbahAlamat')}
-      />
-      <ListProfile
-        title="Tentang Kami"
-        onPress={() => navigation.push('TentangKami')}
-      />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <ListProfile
+          title="Ubah Profile"
+          onPress={() => navigation.push('UbahProfile')}
+        />
+        <ListProfile
+          title="Tentang Kami"
+          onPress={() => navigation.push('TentangKami')}
+        />
+        <Button title="Keluar" />
+      </ScrollView>
     </View>
   );
 };
