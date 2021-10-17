@@ -63,7 +63,7 @@ export default Button;
 
 const styles = StyleSheet.create({
   button: (backgroundColor, noRadius) => ({
-    backgroundColor: backgroundColor || colors.red,
+    backgroundColor: backgroundColor || colors.purple9,
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 10,

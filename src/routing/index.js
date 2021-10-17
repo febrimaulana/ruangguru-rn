@@ -1,6 +1,6 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Splash, Home, Profile} from '../pages';
+import {Splash, Home, Profile, Submit} from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigation} from '../components';
 
@@ -21,12 +21,13 @@ const MainApp = () => {
 const Routing = () => {
   return (
     <Stack.Navigator
-      initialRouteName="MainApp"
+      initialRouteName="Splash"
       screenOptions={{
         headerShown: false,
         animation: 'slide_from_right',
       }}>
       <Stack.Screen name="Splash" component={Splash} />
+      <Stack.Screen name="Submit" component={Submit} />
       <Stack.Screen name="MainApp" component={MainApp} />
     </Stack.Navigator>
   );

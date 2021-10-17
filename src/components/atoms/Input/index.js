@@ -34,12 +34,13 @@ export default Input;
 
 const styles = StyleSheet.create({
   input: height => ({
-    backgroundColor: colors.mercury,
     borderRadius: wp(2),
     paddingHorizontal: wp(5),
-    padding: wp(3.5),
+    padding: wp(2.7),
     color: colors.black,
-    fontFamily: fonts.LatoLight,
+    fontFamily: fonts.LatoRegular,
+    borderWidth: 1,
+    borderColor: colors.gray7,
     height: height,
   }),
 });
